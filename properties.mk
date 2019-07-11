@@ -353,10 +353,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.sensors.allow_non_default_discovery=true \
 persist.vendor.sensors.sync_request=true
 
-# SSR
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-persist.vendor.ssr.restart_level=ALL_ENABLE
-
 # Shutdown
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.vendor.shutdown.waittime=500
