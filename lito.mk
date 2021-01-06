@@ -219,7 +219,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    vndservicemanager
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
