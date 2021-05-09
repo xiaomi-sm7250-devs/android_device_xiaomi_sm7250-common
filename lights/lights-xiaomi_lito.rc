@@ -1,5 +1,13 @@
+on early-boot
+    chown system system /sys/class/leds/white/breath
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/delay_off
+    chown system system /sys/class/leds/white/delay_on
+
+    chown system system /sys/class/backlight/panel0-backlight/brightness
+
 service vendor.light-xiaomi_lito /vendor/bin/hw/android.hardware.lights-service.xiaomi_lito
     class hal
-    user nobody
-    group nobody
+    user system
+    group system
     shutdown critical
