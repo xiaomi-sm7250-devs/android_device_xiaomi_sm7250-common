@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-    Copyright (c) 2018-2020 Qualcomm Technologies, Inc.
+    Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
     All Rights Reserved.
     Confidential and Proprietary - Qualcomm Technologies, Inc.
 
@@ -26,12 +26,25 @@
     <Decoders>
         <!-- C2 HW decoders -->
         <MediaCodec name="c2.qti.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="567-1298" />
+            <Limit name="measured-frame-rate-320x240" range="101-221" />
+            <Limit name="measured-frame-rate-720x480" range="720-740" />
+            <Limit name="measured-frame-rate-1280x720" range="200-420" />
+            <Limit name="measured-frame-rate-1920x1088" range="76-167" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.avc.decoder.low_latency" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="101-221" />
             <Limit name="measured-frame-rate-720x480" range="720-740" />
             <Limit name="measured-frame-rate-1280x720" range="200-420" />
             <Limit name="measured-frame-rate-1920x1088" range="76-167" />
         </MediaCodec>
         <MediaCodec name="c2.qti.hevc.decoder" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-352x288" range="800-850" />
+            <Limit name="measured-frame-rate-720x480" range="440-600" />
+            <Limit name="measured-frame-rate-1280x720" range="215-425" />
+            <Limit name="measured-frame-rate-1920x1080" range="118-259" />
+            <Limit name="measured-frame-rate-3840x2160" range="30-66" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.hevc.decoder.low_latency" type="video/hevc" update="true">
             <Limit name="measured-frame-rate-352x288" range="800-850" />
             <Limit name="measured-frame-rate-720x480" range="440-600" />
             <Limit name="measured-frame-rate-1280x720" range="215-425" />
@@ -79,7 +92,6 @@
             <Limit name="measured-frame-rate-1920x1080" range="87-190" />
             <Limit name="measured-frame-rate-3840x2160" range="20-44" />
         </MediaCodec>
-        <!-- TODO: add C2 mpeg2 decoder performance data -->
 
         <!-- C2 SW codecs -->
         <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
@@ -126,7 +138,7 @@
     <Encoders>
         <!-- C2 HW encoders -->
         <MediaCodec name="c2.qti.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="355-437" />
+            <Limit name="measured-frame-rate-320x240" range="106-234" />
             <Limit name="measured-frame-rate-720x480" range="64-140" />
             <Limit name="measured-frame-rate-1280x720" range="26-56" />
             <Limit name="measured-frame-rate-1920x1080" range="20-44" />
