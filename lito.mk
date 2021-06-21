@@ -336,6 +336,7 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.mdm.sh \
     init.qcom.class_core.sh \
+    init.mi.btmac.sh \
     init.qcom.coex.sh \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
