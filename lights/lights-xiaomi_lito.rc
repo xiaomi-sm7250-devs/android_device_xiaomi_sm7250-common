@@ -1,0 +1,5 @@
+service vendor.light-xiaomi_lito /vendor/bin/hw/android.hardware.lights-service.xiaomi_lito
+    class hal
+    user nobody
+    group nobody
+    shutdown critical
