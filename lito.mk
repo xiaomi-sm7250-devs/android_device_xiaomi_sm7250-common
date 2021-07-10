@@ -307,7 +307,6 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    init.qti.media.sh \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -352,29 +351,21 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.crda.sh \
     init.mdm.sh \
-    init.qcom.class_core.sh \
     init.mi.btmac.sh \
-    init.qcom.coex.sh \
     init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
     init.qcom.sh \
-    init.qti.dcvs.sh \
-    init.qti.media.sh \
-    qca6234-service.sh \
+    init.qti.dcvs.sh
 
 PRODUCT_PACKAGES += \
-    init.qcom.factory.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     fstab.default \
     fstab.emmc \
     recovery.fstab \
-    ueventd.qcom.rc \
+    ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
