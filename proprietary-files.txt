@@ -202,7 +202,6 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 # DRM (OEM Crypto API)
 vendor/lib64/libcpion.so
 vendor/lib64/libminkdescriptor.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
 
 # DRM (Widevine)
@@ -646,9 +645,6 @@ vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
 
 # SECCOMP policy
 vendor/etc/seccomp_policy/mediacodec.policy
-
-# Secure element
-vendor/lib64/libwvkeybox.so
 
 # Snapdragon Computer Vision Engine
 vendor/lib/libscveCommon.so
