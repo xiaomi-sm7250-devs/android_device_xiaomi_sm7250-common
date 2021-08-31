@@ -1,6 +1,9 @@
 # Fingerprint
 type vendor_fp_prop, property_type;
 
+# FM Radio
+type vendor_fm_prop, property_type;
+
 # Init
 type vendor_device_prop, property_type;
 
