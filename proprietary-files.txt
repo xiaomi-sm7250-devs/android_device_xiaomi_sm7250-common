@@ -229,6 +229,10 @@ vendor/etc/init/feature_enabler_client.rc
 # FM
 system_ext/lib/vendor.qti.hardware.fm@1.0.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
+system_ext/lib/fm_helium.so
+system_ext/lib64/fm_helium.so
+system_ext/lib/libfm-hci.so
+system_ext/lib64/libfm-hci.so
 vendor/bin/fm_qsoc_patches
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
