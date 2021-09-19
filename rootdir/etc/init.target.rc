@@ -114,6 +114,9 @@ on boot
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
     chmod 0664  /sys/class/backlight/panel0-backlight/brightness_clone
     write /dev/cpuset/audio-app/cpus 1-2
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
+    chown system system /proc/cmdline
     # Add a cpuset for the camera daemon
     # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
