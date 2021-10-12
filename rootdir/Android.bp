@@ -47,6 +47,19 @@ sh_binary {
     vendor: true,
 }
 
+// fstab
+prebuilt_etc {
+    name: "fstab.default",
+    src: "etc/fstab.default",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab.emmc",
+    src: "etc/fstab.emmc",
+    vendor: true,
+}
+
 // Init configuration files
 prebuilt_etc {
     name: "init.qcom.power.rc",
@@ -66,5 +79,12 @@ prebuilt_etc {
     name: "init.target.rc",
     src: "etc/init.target.rc",
     sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.qcom.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.qcom.rc",
     vendor: true,
 }
