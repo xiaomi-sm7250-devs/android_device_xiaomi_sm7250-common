@@ -124,6 +124,9 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
 
 on boot
+    enable qti_esepowermanager_service_1_1
+    enable vendor.nfc_hal_service
+    enable vendor.secure_element_hal_service
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
@@ -411,6 +414,27 @@ service nqnfcinfo /system/vendor/bin/nqnfcinfo
     group nfc
     user system
     oneshot
+
+service qti_esepowermanager_service_1_1 /vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
+    override
+    class hal
+    user system
+    group nfc system
+    disabled
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc_snxxx@1.2-service
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+service vendor.secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element_snxxx@1.2-service
+    override
+    class hal
+    user secure_element
+    group secure_element
+    disabled
 
 service iop /system/vendor/bin/iop
     class main
