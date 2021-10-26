@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from monet 11 RKQ1.200826.002 V12.5.1.0.RJIMIXM release-keys
+# All unpinned blobs below are extracted from monet 11 RKQ1.200826.002 V12.5.5.0.RJIEUXM release-keys
 
 # ADSP
 vendor/bin/adsprpcd
