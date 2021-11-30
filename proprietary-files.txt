@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from lmi-user 11 RKQ1.200826.002 V12.2.6.0.RJKMIXM release-keys
+# All unpinned blobs below are extracted from monet 11 RKQ1.200826.002 V12.5.1.0.RJIMIXM release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -39,10 +39,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
-
-# Bluetooth (aptX) - from crosshatch - RQ1A.201205.003
-system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -194,18 +190,14 @@ vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libSecureUILib.so
-vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # ESE
-vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
-vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
-vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib64/vendor.qti.esepowermanager@1.1.so
+vendor/lib/vendor.qti.esepowermanager@1.0.so
 
 # Feature enabler client
 vendor/bin/feature_enabler_client
@@ -217,7 +209,7 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno)
--vendor/app/com.qualcomm.qti.gpudrivers.kona.api30/com.qualcomm.qti.gpudrivers.kona.api30.apk;PRESIGNED
+-vendor/app/com.qualcomm.qti.gpudrivers.lito.api30/com.qualcomm.qti.gpudrivers.lito.api30.apk;PRESIGNED
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -404,11 +396,6 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
-vendor/firmware/ipa_uc.b00
-vendor/firmware/ipa_uc.b01
-vendor/firmware/ipa_uc.b02
-vendor/firmware/ipa_uc.elf
-vendor/firmware/ipa_uc.mdt
 
 # IRQ balance
 vendor/bin/msm_irqbalance
@@ -423,7 +410,7 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.kona.so
+vendor/lib/hw/sound_trigger.primary.lito.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libcapiv2svacnn.so
 vendor/lib/libcapiv2svarnn.so
@@ -480,13 +467,11 @@ vendor/etc/libnfc-nxp_RF.conf
 vendor/etc/sn100u_nfcon.pnscr
 vendor/lib/libsn100u_fw.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
-vendor/lib64/se_nq_extn_client.so
 
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libspcom.so
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
@@ -576,7 +561,6 @@ vendor/bin/hw/qcrild
 vendor/bin/adpl
 vendor/bin/ATFWD-daemon
 vendor/bin/ks
-vendor/bin/mdm_helper
 vendor/bin/netmgrd
 vendor/bin/pd-mapper
 vendor/bin/port-bridge
@@ -601,12 +585,15 @@ vendor/etc/init/qcrild.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
+vendor/lib/vendor.qti.hardware.fm@1.0.so
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/deviceInfoServiceModule.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libhydra_common.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
-vendor/lib64/libmdmimgload.so
 vendor/lib64/libminkdescriptor.so
 vendor/lib64/libmodemapi.so
 vendor/lib64/libnetmgr.so
@@ -665,12 +652,7 @@ vendor/etc/seccomp_policy/qspm.policy
 vendor/etc/seccomp_policy/qti-systemd.policy
 
 # Secure element
-vendor/bin/hw/vendor.qti.secure_element@1.2-service
-vendor/etc/init/vendor.qti.secure_element@1.2-service.rc
-vendor/lib64/android.hardware.secure_element@1.0-impl.so
-vendor/lib64/jcos_nq_client.so
 vendor/lib64/libwvkeybox.so
-vendor/lib64/ls_nq_client.so
 
 # Snapdragon Computer Vision Engine
 -vendor/lib/libfastcvopt.so

@@ -6,7 +6,7 @@
 //
 
 cc_library_shared {
-    name: "lights.kona",
+    name: "lights.lito",
     relative_install_path: "hw",
     srcs: ["lights.c"],
     cflags: ["-DLOG_TAG=\"qdlights\""],

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/xiaomi/sm8250-common
+COMMON_PATH := device/xiaomi/sm7250-common
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -41,7 +41,7 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := kona
+TARGET_BOOTLOADER_BOARD_NAME := lito
 TARGET_NO_BOOTLOADER := true
 
 # Camera
@@ -67,9 +67,9 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
-SOONG_CONFIG_NAMESPACES += XIAOMI_KONA_FOD
-SOONG_CONFIG_XIAOMI_KONA_FOD := POS_X POS_Y SIZE
-TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.xiaomi_kona
+SOONG_CONFIG_NAMESPACES += XIAOMI_LITO_FOD
+SOONG_CONFIG_XIAOMI_LITO_FOD := POS_X POS_Y SIZE
+TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.xiaomi_lito
 endif
 
 # HIDL
@@ -87,7 +87,7 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7250
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -131,7 +131,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := kona
+TARGET_BOARD_PLATFORM := lito
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
@@ -218,4 +218,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
-include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk
+include vendor/xiaomi/sm7250-common/BoardConfigVendor.mk
