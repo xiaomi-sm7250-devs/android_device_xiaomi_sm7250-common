@@ -1,5 +1,5 @@
 # Audio
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 aaudio.hw_burst_min_usec=2000 \
 aaudio.mmap_exclusive_policy=2 \
 aaudio.mmap_policy=2 \
@@ -122,13 +122,13 @@ vendor.audio_hal.period_multiplier=3 \
 vendor.audio_hal.period_size=192 \
 vendor.voice.path.for.pcm.voip=true
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.audio.button_jack.profile=volume \
 persist.audio.button_jack.switch=0 \
 tunnel.audio.encode=true
 
 # Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
 persist.bluetooth.a2dp_offload.disabled=false \
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
@@ -146,23 +146,23 @@ ro.vendor.bluetooth.wipower=false \
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 camera.disable_zsl_mode=true
 
 # Charger
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 ro.charger.disable_init_blank=true
 
 # Crypto
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.crypto.allow_encrypt_override=true \
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 dalvik.vm.heapgrowthlimit=256m \
 dalvik.vm.heapmaxfree=8m \
 dalvik.vm.heapminfree=512k \
@@ -171,7 +171,7 @@ dalvik.vm.heapstartsize=8m \
 dalvik.vm.heaptargetutilization=0.75
 
 # Display
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
 ro.surface_flinger.max_virtual_display_dimension=4096 \
@@ -192,52 +192,52 @@ vendor.display.qdcm.mode_combine=1 \
 vendor.display.use_layer_ext=1 \
 vendor.display.use_smooth_motion=1
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 debug.gralloc.gfx_ubwc_disable=0 \
 debug.sf.enable_hwc_vds=1 \
 debug.sf.latch_unsignaled=1 \
 persist.vendor.color.matrix=2
 
 # CNE
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.vendor.cne.feature=1
 
 # DPM
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.vendor.dpm.feature=1
 
 # DRM
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 drm.service.enabled=true
 
 # Fingerprint
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.qfp=false
 
 # FRP
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Fwk detect
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.vendor.qti.va_aosp.support=1
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 ro.vendor.qti.va_aosp.support=1
 
 PRODUCT_ODM_PROPERTIES += \
 ro.vendor.qti.va_odm.support=1
 
 # Gatekeeper
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 vendor.gatekeeper.disable_spu=true
 
 # GPS
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 debug.egl.hw=0 \
 debug.mdpcomp.logs=0 \
 debug.sf.enable_advanced_sf_phase_offset=1 \
@@ -259,63 +259,63 @@ ro.opengles.version=196610 \
 vendor.gralloc.disable_ubwc=0
 
 # IMS
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=1
 
 # IOP
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 vendor.iop.enable_prefetch_ofr=1 \
 vendor.iop.enable_uxe=0
 
 # Keystore
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.hardware.keystore_desede=true
 
 # Media
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 debug.stagefright.ccodec=1 \
 debug.stagefright.omx_default_rank=0
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Netflix
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 ro.netflix.bsp_rev=Q7250-19133-1
 
 # Netmgr
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.vendor.data.iwlan.enable=true \
 persist.vendor.data.mode=concurrent
 
 # NFC
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.camera.notify_nfc=1
 
 # OTG
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.sys.oem.otg_support=true
 
 # PASR
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 vendor.power.pasr.enabled=false
 
 # Perf
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.vendor.extension_library=libqti-perfd-client.so
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 ro.vendor.qti.core_ctl_max_cpu=4 \
 ro.vendor.qti.core_ctl_min_cpu=2
 
 # Qualcomm System Daemon
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.qcomsysd.enabled=1
 
 # Radio
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.radio.multisim.config=dsds \
 persist.radio.snapshot_enabled=0 \
 persist.radio.snapshot_timer=0 \
@@ -341,36 +341,36 @@ persist.vendor.radio.uicc_se_enabled=true \
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
 ro.com.android.dataroaming=false
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 ro.telephony.default_network=33,33
 
 # Seamless transfer
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 sys.fflag.override.settings_seamless_transfer=true
 
 # Sensors
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.sensors.allow_non_default_discovery=true \
 persist.vendor.sensors.sync_request=true
 
 # Shutdown
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 sys.vendor.shutdown.waittime=500
 
 # USB
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 vendor.usb.diag.func.name=diag \
 vendor.usb.use_ffs_mtp=0
 
 # Volume steps
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 ro.config.media_vol_steps=30 \
 ro.config.vc_call_vol_steps=10
 
 # WiFi
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
 wifi.aware.interface=wifi-aware0
 
 # Zygote
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
 persist.device_config.runtime_native.usap_pool_enabled=true
