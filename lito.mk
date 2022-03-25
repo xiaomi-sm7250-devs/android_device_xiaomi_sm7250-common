@@ -205,9 +205,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_HAS_FOD),true)
 PRODUCT_PACKAGES += \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor
-
-PRODUCT_PACKAGES += \
-    KeyHandler
 endif
 
 PRODUCT_PACKAGES += \
