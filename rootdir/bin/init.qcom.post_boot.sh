@@ -928,12 +928,23 @@ function configure_memory_parameters() {
 ProductName=`getprop ro.product.name`
 low_ram=`getprop ro.config.low_ram`
 
-if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
+if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ] || [ "$ProductName" == "alioth" ]; then
       # Enable ZRAM
       configure_zram_parameters
       configure_read_ahead_kb_values
       echo 0 > /proc/sys/vm/page-cluster
       echo 100 > /proc/sys/vm/swappiness
+
+      #add memory limit to camera cgroup
+        MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+        MemTotal=${MemTotalStr:16:8}
+        if [ $MemTotal -gt 8388608 ]; then
+            let LimitSize=838860800
+        else
+            let LimitSize=524288000
+        fi
+
+        echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
 else
     arch_type=`uname -m`
 
@@ -1015,7 +1026,7 @@ else
               *)
                 #Set PPR parameters for all other targets.
                 echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-                echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+                echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
                 echo 50 > /sys/module/process_reclaim/parameters/pressure_min
                 echo 70 > /sys/module/process_reclaim/parameters/pressure_max
                 echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
@@ -3437,8 +3448,11 @@ case "$target" in
             echo 100 > /proc/sys/kernel/sched_group_upmigrate
 
             # cpuset settings
-            echo 0-3 > /dev/cpuset/background/cpus
-            echo 0-3 > /dev/cpuset/system-background/cpus
+            echo 0-2     > /dev/cpuset/background/cpus
+            echo 0-3     > /dev/cpuset/system-background/cpus
+            echo 4-7     > /dev/cpuset/foreground/boost/cpus
+            echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+            echo 0-7     > /dev/cpuset/top-app/cpus
 
 
             # configure governor settings for little cluster
@@ -3860,7 +3874,7 @@ case "$target" in
 
         if [ `cat /sys/devices/soc0/revision` == "2.0" ]; then
              # r2.0 related changes
-             echo "0:1075200" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+             echo "0:1516800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
              echo 610000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/rtg_boost_freq
              echo 1075200 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
              echo 1152000 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
@@ -4013,8 +4027,10 @@ case "$target" in
         # Enable conservative pl
         echo 1 > /proc/sys/kernel/sched_conservative_pl
 
-        echo "0:1248000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+        echo 2 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_input
+        echo "0:1516800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
         echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+        echo 1 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_powerkey_input
 
         # Set Memory parameters
         configure_memory_parameters
@@ -4090,8 +4106,11 @@ case "$target" in
         setprop vendor.dcvs.prop 1
 
         # cpuset parameters
-        echo 0-5 > /dev/cpuset/background/cpus
-        echo 0-5 > /dev/cpuset/system-background/cpus
+        echo 0-2     > /dev/cpuset/background/cpus
+        echo 0-3     > /dev/cpuset/system-background/cpus
+        echo 4-7     > /dev/cpuset/foreground/boost/cpus
+        echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+        echo 0-7     > /dev/cpuset/top-app/cpus
 
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
@@ -5571,8 +5590,10 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 	# configure input boost settings
-	echo "0:1324800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+	echo "0:1344000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
 	echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+	echo "0:1804800 1:0 2:0 3:0 4:2419200 5:0 6:0 7:2841600" > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_freq
+	echo 400 > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_ms
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor

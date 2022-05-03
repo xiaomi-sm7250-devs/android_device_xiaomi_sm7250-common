@@ -32,13 +32,6 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
 
 on init
-    # Setup permission for Power HAL
-    chown system system /dev/stune/top-app/schedtune.boost
-    chown system system /dev/cpu_dma_latency
-
-    chmod 0664 /dev/stune/top-app/schedtune.boost
-    chmod 0664 /dev/cpu_dma_latency
-
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
     write /dev/stune/schedtune.colocate 0
@@ -181,6 +174,16 @@ on charger
     setprop sys.usb.configfs 1
     chown system system /sys/class/leds/white/brightness
     write /sys/class/leds/white/brightness 255
+
+on property:vendor.audio.cit.spkcal.copy=true
+    copy /data/vendor/cit/cs35l41_cal.bin /mnt/vendor/persist/audio/cs35l41_cal.bin
+    copy /data/vendor/cit/cs35l41_cal_right.bin /mnt/vendor/persist/audio/cs35l41_cal_right.bin
+    copy /data/vendor/cit/cs35l41_cal.txt /mnt/vendor/persist/audio/cs35l41_cal.txt
+    copy /data/vendor/cit/cs35l41_cal_right.txt /mnt/vendor/persist/audio/cs35l41_cal_right.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_right.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_right.txt
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
