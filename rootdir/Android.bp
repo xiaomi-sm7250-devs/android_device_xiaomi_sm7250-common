@@ -62,6 +62,13 @@ prebuilt_etc {
 
 // Init configuration files
 prebuilt_etc {
+    name: "init.fingerprint.rc",
+    src: "etc/init.fingerprint.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.qcom.power.rc",
     src: "etc/init.qcom.power.rc",
     sub_dir: "init/hw",
