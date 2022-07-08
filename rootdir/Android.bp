@@ -49,14 +49,8 @@ sh_binary {
 
 // fstab
 prebuilt_etc {
-    name: "fstab.default",
-    src: "etc/fstab.default",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "fstab.emmc",
-    src: "etc/fstab.emmc",
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
     vendor: true,
 }
 
